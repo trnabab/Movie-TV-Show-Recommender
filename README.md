@@ -1,8 +1,8 @@
 
-# MovieTVShowRecommender
+# Movie & TV Show Recommender
 
 ## Overview
-This repository contains a movie and TV show recommendation system built using a dataset of Netflix titles from Kaggle. The project includes data preprocessing, exploratory data analysis (EDA), and a content-based recommendation algorithm to provide personalized suggestions.
+This repository contains a movie and TV show recommendation system built using a dataset of Netflix titles from Kaggle. The project includes data preprocessing, exploratory data analysis (EDA), and a content-based recommendation algorithm to provide personalized suggestions to users. The recommendations include links to Netflix search results and poster images.
 
 ## Dataset
 The dataset `netflix_titles.csv` includes details about Netflix movies and TV shows, such as title, director, cast, country, date added, release year, rating, and duration.
@@ -11,6 +11,8 @@ The dataset `netflix_titles.csv` includes details about Netflix movies and TV sh
 - Data Preprocessing: Cleaning and preparing the data for analysis.
 - Exploratory Data Analysis: Gaining insights and visualizing the data.
 - Content-Based Recommendation: Implementing content-based filtering using metadata and cosine similarity.
+- Poster Images and Netflix Links: Fetching poster images from OMDb API and generating Netflix search links.
+
 
 ## Installation
 1. Clone the repository:

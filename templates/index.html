@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4">Movie and TV Show Recommender</h1>
+    <p class="lead">Enter a Movie or TV show title to get personalized recommendations.</p>
+    <hr class="my-4">
+    <form action="{{ url_for('recommend') }}" method="post">
+        <div class="form-group">
+            <label for="title">Enter a Movie or TV show title:</label>
+            <input type="text" id="title" name="title" class="form-control" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Get Recommendations</button>
+    </form>
+</div>
+{% endblock %}
