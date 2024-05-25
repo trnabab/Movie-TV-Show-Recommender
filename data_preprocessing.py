@@ -35,14 +35,23 @@ netflix_df.drop_duplicates(inplace=True)
 # Extract year from date_added
 netflix_df['year_added'] = netflix_df['date_added'].dt.year
 
-# Categorize duration
-def convert_duration(duration):
-    if 'Season' in duration:
-        return 'TV Show'
+# Extract duration in minutes for movies
+def get_duration_minutes(duration):
+    if 'min' in duration:
+        return int(duration.replace(' min', ''))
     else:
-        return 'Movie'
-    
-netflix_df['duration_type'] = netflix_df['duration'].apply(convert_duration)
+        return None
+
+netflix_df['duration_minutes'] = netflix_df['duration'].apply(get_duration_minutes)
+
+# Extract number of seasons for TV shows
+def get_seasons(duration):
+    if 'Season' in duration:
+        return int(duration.split(' ')[0])
+    else:
+        return None
+
+netflix_df['seasons_count'] = netflix_df['duration'].apply(get_seasons)
 
 # Display data after feature engineering
 print("\nData after feature engineering:")
